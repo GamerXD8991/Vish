@@ -19,7 +19,7 @@ import os
 
 class ZoomLabel(QLabel):
     def mouseDoubleClickEvent(self, event):
-        self.parent().set_zoom(1.0, animated=True)
+        self.parent().parent().set_zoom(1.0, animated=True)
 
 # class MiniMap(QGraphicsView):
 #     def __init__(self, scene, parent):
@@ -555,7 +555,7 @@ class GraphView(QGraphicsView):
 
         self.zoom_label = ZoomLabel("100%")
         self.zoom_label.setFixedWidth(32)
-        self.zoom_label.setAlignment(Qt.AlignHCenter)
+        self.zoom_label.setAlignment(Qt.AlignHCenter | Qt.AlignVCenter)
         self.zoom_slider = QSlider(Qt.Horizontal)
 
         self.zoom_slider.setRange(20, 300)
